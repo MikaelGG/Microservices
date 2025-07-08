@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: microservice-webs
+  datasource:
+    url: jdbc:postgresql://localhost:5432/webs?useSSL=false
+    username: postgres
+    password: '8888'
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: ${SERVER_PORT:0}
+

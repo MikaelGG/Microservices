@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: microservice-clothes
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/CLOTHES
+    username: CLOTHESUSER
+    password: 'CLOTHESUSERPASS'
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: ${SERVER_PORT:0}
+
