@@ -16,6 +16,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="eureka-service" />
         <module name="config-service" />
       </profile>
       <profile name="Annotation profile for Webs" enabled="true">
@@ -37,6 +38,7 @@
       <module name="Webs" options="-parameters" />
       <module name="client" options="-parameters" />
       <module name="config-service" options="-parameters" />
+      <module name="eureka-service" options="-parameters" />
     </option>
   </component>
 </project>
