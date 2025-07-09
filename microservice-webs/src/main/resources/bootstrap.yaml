@@ -13,6 +13,4 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-server:
-  port: ${SERVER_PORT:0}
 
