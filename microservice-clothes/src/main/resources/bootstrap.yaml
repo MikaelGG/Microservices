@@ -5,12 +5,5 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8081
-  datasource:
-    url: jdbc:oracle:thin:@//localhost:1521/CLOTHES
-    username: CLOTHESUSER
-    password: 'CLOTHESUSERPASS'
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+
 

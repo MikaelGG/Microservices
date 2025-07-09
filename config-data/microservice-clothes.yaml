@@ -1,2 +1,11 @@
 server:
   port: 8002
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/CLOTHES
+    username: CLOTHESUSER
+    password: 'CLOTHESUSERPASS'
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
