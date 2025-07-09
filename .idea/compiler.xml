@@ -12,18 +12,22 @@
         </processorPath>
         <module name="client" />
       </profile>
-      <profile name="Annotation profile for Microservice-clothes" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-service" />
+      </profile>
+      <profile name="Annotation profile for Webs" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-configuration-processor/3.5.0/spring-boot-configuration-processor-3.5.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-configuration-processor/3.5.0/spring-boot-configuration-processor-3.5.0.jar" />
         </processorPath>
-        <module name="Microservice-clothes" />
         <module name="Webs" />
+        <module name="Microservice-clothes" />
       </profile>
     </annotationProcessing>
   </component>
@@ -32,6 +36,7 @@
       <module name="Microservice-clothes" options="-parameters" />
       <module name="Webs" options="-parameters" />
       <module name="client" options="-parameters" />
+      <module name="config-service" options="-parameters" />
     </option>
   </component>
 </project>

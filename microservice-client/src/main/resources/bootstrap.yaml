@@ -1,6 +1,10 @@
 spring:
   application:
     name: microservice-client
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
   datasource:
     url: jdbc:mysql://localhost:3306/client
     username: root
@@ -9,8 +13,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-server:
-  port: ${SERVER_PORT:0}
+
 
 
 
