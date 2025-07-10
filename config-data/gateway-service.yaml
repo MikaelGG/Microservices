@@ -20,12 +20,12 @@ spring:
         - id: microservice-client
           uri: lb://microservice-client
           predicates:
-            - Path=/**
+            - Path=/api/**
         - id: microservice-clothes
           uri: lb://microservice-clothes
           predicates:
-            - Path=/**
+            - Path=/api/**
         - id: microservice-webs
           uri: lb://microservice-webs
           predicates:
-            - Path=/**
+            - Path=/api/**
