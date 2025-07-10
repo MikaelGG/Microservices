@@ -12,8 +12,8 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-    instance:
-      hostname: localhost
+  instance:
+    hostname: localhost
 
 spring:
   cloud:
@@ -21,6 +21,7 @@ spring:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
       routes:
         - id: microservice-client
           uri: lb://microservice-client
