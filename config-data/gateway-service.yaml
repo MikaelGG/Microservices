@@ -27,7 +27,7 @@ spring:
             - id: microservice-webs
               uri: lb://microservice-webs
               predicates:
-                - Path=/api/developers/**, /api/webs-invoices/**, /api/webpages/**
+                - Path=/api/developers/**, /api/webs-invoices/**, /api/webpages/*
       discovery:
         locator:
           enabled: true
