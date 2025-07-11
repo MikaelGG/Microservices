@@ -19,15 +19,21 @@ spring:
             - id: microservice-client
               uri: lb://microservice-client
               predicates:
-                - Path=/api/clients/**
+                - Path=/clients/**
+              filters:
+                - PrefixPath=/api
             - id: microservice-clothes
               uri: lb://microservice-clothes
               predicates:
-                - Path=/api/categories/**, /api/clothes-invoices/**, /api/categories/**, /api/products/**
+                - Path=/categories/**, /clothes-invoices/**, /categories/**, /products/**
+              filters:
+                - PrefixPath=/api
             - id: microservice-webs
               uri: lb://microservice-webs
               predicates:
-                - Path=/api/developers/**, /api/webs-invoices/**, /api/webpages/*
+                - Path=/developers/**, /webs-invoices/**, /webpages/*
+              filters:
+                - PrefixPath=/api
       discovery:
         locator:
           enabled: true
