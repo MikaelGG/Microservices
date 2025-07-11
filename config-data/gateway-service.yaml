@@ -17,7 +17,7 @@ spring:
         webmvc:
           routes:
             - id: microservice-client
-              uri: lb://microservice-client
+              uri: microservice-client
               predicates:
                 - Path=/api/clients/**
             - id: microservice-clothes
