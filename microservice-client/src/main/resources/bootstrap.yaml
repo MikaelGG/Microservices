@@ -1,10 +1,14 @@
 spring:
   application:
     name: microservice-client
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:default}
   cloud:
     config:
       enabled: true
-      uri: http://localhost:8081
+      uri: ${CONFIG_SERVER_URL:http://localhost:8081}
+      profile: ${CONFIG_PROFILE:${SPRING_PROFILES_ACTIVE:default}}
+      fail-fast: true
 
 
 

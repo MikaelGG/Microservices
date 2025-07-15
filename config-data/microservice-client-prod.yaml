@@ -1,0 +1,24 @@
+server:
+  port: ${PORT:0}
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql:////mysql.railway.internal:3306/railway?useSSL=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:XlihnIDCeRHlbdSTqLQwVNKPMDcuLmTC}
+  jpa:
+    show-sql: ${SHOW_SQL:false}
+    hibernate:
+      ddl-auto: ${DDL_AUTO:validate}
+    properties:
+      hibernate:
+        format_sql: true
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_URL:https://eureka-service-production.up.railway.app/eureka/}
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+    prefer-ip-address: true
+    hostname: ${HOSTNAME:microservice-client-production.up.railway.app}

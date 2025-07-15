@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/CLOTHES
+    username: CLOTHESUSER
+    password: 'CLOTHESUSERPASS'
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${random.value}

@@ -1,0 +1,13 @@
+server:
+  port: ${PORT:8761}
+eureka:
+    client:
+        fetch-registry: false
+        register-with-eureka: false
+        service-url:
+            defaultZone: ${EUREKA_URL:https://eureka-service-production.up.railway.app/eureka/}
+    server:
+        enable-self-preservation: ${ENABLE_SELF_PRESERVATION:false}
+        eviction-interval-timer-in-ms: ${EVICTION_INTERVAL:10000}
+    instance:
+      hostname: ${HOSTNAME:eureka-service-production.up.railway.app}
