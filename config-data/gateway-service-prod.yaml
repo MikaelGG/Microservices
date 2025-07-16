@@ -29,7 +29,7 @@ spring:
             - Path=/api/developers/**, /api/webs-invoices/**, /api/webpages/**
       discovery:
         locator:
-          enabled: false
+          enabled: true
       globalcors:
         corsConfigurations:
           '[/**]':
