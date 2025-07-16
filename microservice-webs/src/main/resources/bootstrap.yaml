@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       enabled: true
-      uri: ${CONFIG_SERVER_URL:http://localhost:8081}
+      uri: ${CONFIG_SERVER_URL:https://config-service.up.railway.app}
       profile: ${CONFIG_PROFILE:${SPRING_PROFILES_ACTIVE:default}}
       fail-fast: true
 
