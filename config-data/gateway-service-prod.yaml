@@ -19,10 +19,6 @@ spring:
           uri: https://microservice-client.up.railway.app/
           predicates:
             - Path=/api/clients/**
-        - id: microservice-clothes
-          uri: lb://microservice-clothes
-          predicates:
-            - Path=/api/categories/**, /api/clothes-invoices/**, /api/products/**
         - id: microservice-webs
           uri: https://microservice-webs.up.railway.app/
           predicates:
