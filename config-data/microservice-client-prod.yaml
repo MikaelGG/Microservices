@@ -2,7 +2,7 @@ server:
   port: ${PORT:0}
 spring:
   datasource:
-    url: ${DATABASE_URL:jdbc:mysql:////mysql.railway.internal:3306/railway?useSSL=true&serverTimezone=UTC}
+    url: ${DATABASE_URL:jdbc:mysql://shuttle.proxy.rlwy.net:15561/railway}
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:XlihnIDCeRHlbdSTqLQwVNKPMDcuLmTC}
     driver-class-name: com.mysql.cj.jdbc.Driver
