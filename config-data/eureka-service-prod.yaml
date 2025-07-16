@@ -5,9 +5,9 @@ eureka:
         fetch-registry: false
         register-with-eureka: false
         service-url:
-            defaultZone: ${EUREKA_URL:https://eureka-service-production.up.railway.app/eureka/}
+            defaultZone: ${EUREKA_URL:https://eureka-service.up.railway.app/eureka/}
     server:
         enable-self-preservation: ${ENABLE_SELF_PRESERVATION:false}
         eviction-interval-timer-in-ms: ${EVICTION_INTERVAL:10000}
     instance:
-      hostname: ${HOSTNAME:eureka-service-production.up.railway.app}
+      hostname: ${HOSTNAME:eureka-service.up.railway.app}

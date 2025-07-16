@@ -6,9 +6,9 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: ${EUREKA_URL:https://eureka-service-production.up.railway.app/eureka/}
+      defaultZone: ${EUREKA_URL:https://eureka-service.up.railway.app/eureka/}
   instance:
-    hostname: ${HOSTNAME:gateway-service-production.up.railway.app}
+    hostname: ${HOSTNAME:eureka-service.up.railway.app}
     prefer-ip-address: true
 
 spring:
