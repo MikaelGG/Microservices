@@ -30,6 +30,7 @@ feign:
       default:
         connectTimeout: 30000
         readTimeout: 30000
-      example:
+      client-service-external:
         connectTimeout: 30000
         readTimeout: 30000
+        url: https://microservice-client.up.railway.app
