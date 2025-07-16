@@ -16,7 +16,7 @@ spring:
     gateway:
       routes:
         - id: microservice-client
-          uri: https://microservice-client.up.railway.app
+          uri: lb://microservice-client
           predicates:
             - Path=/api/clients/**
         - id: microservice-clothes
@@ -24,7 +24,7 @@ spring:
           predicates:
             - Path=/api/categories/**, /api/clothes-invoices/**, /api/products/**
         - id: microservice-webs
-          uri: https://microservice-webs.up.railway.app
+          uri: lb://microservice-webs
           predicates:
             - Path=/api/developers/**, /api/webs-invoices/**, /api/webpages/**
       discovery:
