@@ -8,7 +8,7 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_URL:https://eureka-service.up.railway.app/eureka/}
   instance:
-    hostname: ${HOSTNAME:eureka-service.up.railway.app}
+    hostname: ${HOSTNAME:gateway-server.up.railway.app}
     prefer-ip-address: true
 
 spring:
