@@ -22,3 +22,6 @@ eureka:
     instance-id: ${spring.application.name}:${random.value}
     prefer-ip-address: true
     hostname: ${HOSTNAME:microservice-webs.up.railway.app}
+feign:
+  discovery:
+    enabled: false
