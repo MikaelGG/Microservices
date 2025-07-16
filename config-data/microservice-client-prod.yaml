@@ -23,5 +23,5 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
     prefer-ip-address: true
-    hostname: ${HOSTNAME:microservice-client.up.railway.app}
+    hostname: ${HOSTNAME:microservice-client}
 
