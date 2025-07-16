@@ -14,21 +14,19 @@ eureka:
 spring:
   cloud:
     gateway:
-      server:
-        webmvc:
-          routes:
-            - id: microservice-client
-              uri: lb://microservice-client
-              predicates:
-                - Path=/api/clients/**
-            - id: microservice-clothes
-              uri: lb://microservice-clothes
-              predicates:
-                - Path=/api/categories/**, /api/clothes-invoices/**, /api/products/**
-            - id: microservice-webs
-              uri: lb://microservice-webs
-              predicates:
-                - Path=/api/developers/**, /api/webs-invoices/**, /api/webpages/*
+      routes:
+        - id: microservice-client
+          uri: lb://microservice-client
+          predicates:
+            - Path=/api/clients/**
+        - id: microservice-clothes
+          uri: lb://microservice-clothes
+          predicates:
+            - Path=/api/categories/**, /api/clothes-invoices/**, /api/products/**
+        - id: microservice-webs
+          uri: lb://microservice-webs
+          predicates:
+            - Path=/api/developers/**, /api/webs-invoices/**, /api/webpages/**
       discovery:
         locator:
           enabled: true
