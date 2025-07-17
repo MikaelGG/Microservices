@@ -1,6 +1,6 @@
 package com.microservice_webs.service;
 
-import com.microservice_webs.clients.ClientFeignClient;
+import com.microservice_webs.dto.ClientDTO;
 import com.microservice_webs.dto.InvoicesDTO;
 import com.microservice_webs.model.Invoices;
 import com.microservice_webs.model.WebPages;
@@ -9,6 +9,8 @@ import com.microservice_webs.repository.WebPagesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class InvoicesService {
     @Autowired
     InvoicesRepository invoicesRepository;
     @Autowired
-    ClientFeignClient clientFeignClient;
+    RestTemplate restTemplate;
     @Autowired
     WebPagesRepository webPagesRepository;
 
@@ -40,7 +42,7 @@ public class InvoicesService {
             invoiceDTO.setIssueDate(invoice.getIssueDate());
             WebPages webPages = webPagesRepository.findById(invoice.getIdWebPage().getId()).orElseThrow(() -> new RuntimeException("WebPage not found with id: " + invoice.getIdWebPage().getId()));
             invoiceDTO.setIdWebPage(webPages);
-            invoiceDTO.setIdClient(clientFeignClient.getClientById(invoice.getIdClient()));
+            invoiceDTO.setIdClient(restTemplate.getForObject("https://microservice-client.up.railway.app/api/clients/" + invoice.getIdClient(), ClientDTO.class));
             return invoiceDTO;
         }).toList();
     }
@@ -52,7 +54,7 @@ public class InvoicesService {
         invoiceDTO.setIssueDate(invoices.getIssueDate());
         WebPages webPages = webPagesRepository.findById(invoices.getIdWebPage().getId()).orElseThrow(() -> new RuntimeException("WebPage not found with id: " + invoices.getIdWebPage().getId()));
         invoiceDTO.setIdWebPage(webPages);
-        invoiceDTO.setIdClient(clientFeignClient.getClientById(invoices.getIdClient()));
+        invoiceDTO.setIdClient(restTemplate.getForObject("https://microservice-client.up.railway.app/api/clients/" + invoices.getIdClient(), ClientDTO.class));
         return invoiceDTO;
     }
 
