@@ -12,13 +12,3 @@ spring:
     properties:
       hibernate:
         format_sql: true
-eureka:
-  client:
-    fetch-registry: false
-    register-with-eureka: false
-    service-url:
-      defaultZone: ${EUREKA_URL:https://eureka-service.up.railway.app/eureka/}
-  instance:
-    instance-id: ${spring.application.name}:${random.value}
-    prefer-ip-address: true
-    hostname: ${HOSTNAME:microservice-webs.up.railway.app}
